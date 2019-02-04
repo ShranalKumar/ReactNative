@@ -5,10 +5,7 @@ import {CardSection} from './common';
 import * as actions from '../actions';
 
 class ListItem extends Component {
-    componentWillUpdate() {
-        if (Platform.OS === 'android'){
-            UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
-        }
+    componentWillUpdate() {        
         LayoutAnimation.spring();       
     }
 
@@ -29,6 +26,10 @@ class ListItem extends Component {
     render() {
         const {titleStyle} = styles;
         const {id, title} = this.props.library.item;
+
+        if (Platform.OS === 'android'){
+            UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
+        }
 
         return (
             <TouchableWithoutFeedback onPress={() => this.props.selectLibrary(id)}>
