@@ -38,6 +38,12 @@ class EmployeeEdit extends Component {
                         Text Schedule
                     </Button>
                 </CardSection>
+
+                <CardSection>
+                    <Button onPress={this.onTextPress.bind(this)}>
+                        Fire
+                    </Button>
+                </CardSection>
             </Card>
         );
     }
